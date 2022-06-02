@@ -1,0 +1,5 @@
+<div class="row mb-3" *ngFor="let movie of seenMovies; let i = index">
+  <div class="col-md-12">
+    <app-movie [movie]="movie" [movieIdx]="i"></app-movie>
+  </div>
+</div>
