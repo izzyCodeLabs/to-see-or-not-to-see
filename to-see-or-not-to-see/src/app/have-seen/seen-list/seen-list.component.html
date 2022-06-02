@@ -1,5 +1,12 @@
 <div class="row mb-3" *ngFor="let movie of seenMovies; let i = index">
   <div class="col-md-12">
     <app-movie [movie]="movie" [movieIdx]="i"></app-movie>
+    <button
+      class="float-right"
+      style="border: none; font-size: 2rem; cursor: pointer"
+      (click)="onAddFavorite(i)"
+    >
+      &star;
+    </button>
   </div>
 </div>

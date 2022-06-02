@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { HaveSeenComponent } from './have-seen/have-seen.component';
 import { SeenListComponent } from './have-seen/seen-list/seen-list.component';
 import { MovieComponent } from './movie/movie.component';
+import { FavoriteListComponent } from './have-seen/favorite-list/favorite-list.component';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { MovieComponent } from './movie/movie.component';
     HaveSeenComponent,
     SeenListComponent,
     MovieComponent,
+    FavoriteListComponent,
   ],
   imports: [BrowserModule],
   providers: [],

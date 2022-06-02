@@ -9,15 +9,13 @@ import { SeenService } from '../seen.service';
 })
 export class SeenListComponent implements OnInit {
   seenMovies: Movie[];
-  favoriteMovies: Movie[];
   constructor(private seenService: SeenService) {}
 
   ngOnInit(): void {
     this.seenMovies = this.seenService.getSeenMovies();
-    this.favoriteMovies = this.seenService.getFaveMovies();
   }
 
-  onAddFavorite(movie: Movie) {
-    this.seenService.addSeenMovie(movie);
+  onAddFavorite(idx: number) {
+    this.seenService.addFaveMovie(idx);
   }
 }

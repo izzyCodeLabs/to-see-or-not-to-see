@@ -37,8 +37,19 @@ export class SeenService {
     return this.mySeenMovies.slice();
   }
 
-  addSeenMovie(movie: Movie) {
-    this.myFaveMovies.push(movie);
+  addFaveMovie(idx: number) {
+    if (idx < 0) return;
+    let newFavorite = this.mySeenMovies[idx];
+
+    this.myFaveMovies.push(newFavorite);
+    this.faveListChange.next(this.myFaveMovies.slice());
+    console.log(this.myFaveMovies);
+  }
+
+  removeFavoriteMovie(idx) {
+    if (idx < 0) return;
+
+    this.myFaveMovies.splice(idx, 1);
     this.faveListChange.next(this.myFaveMovies.slice());
   }
 }
