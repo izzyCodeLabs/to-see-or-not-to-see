@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { HaveSeenComponent } from './have-seen/have-seen.component';
-import { SeenListComponent } from './seen-list/seen-list.component';
+import { SeenListComponent } from './have-seen/seen-list/seen-list.component';
 import { MovieComponent } from './movie/movie.component';
 
 @NgModule({
@@ -11,12 +11,10 @@ import { MovieComponent } from './movie/movie.component';
     AppComponent,
     HaveSeenComponent,
     SeenListComponent,
-    MovieComponent
+    MovieComponent,
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
