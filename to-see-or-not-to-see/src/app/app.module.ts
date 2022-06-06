@@ -12,6 +12,8 @@ import { FavoriteListComponent } from './have-seen/favorite-list/favorite-list.c
 import { SearchComponent } from './search/search.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NavbarComponent } from './navbar/navbar.component';
+import { MovieViewComponent } from './search/movie-view/movie-view.component';
+import { MovieSearchComponent } from './search/movie-search/movie-search.component';
 
 @NgModule({
   declarations: [
@@ -22,9 +24,10 @@ import { NavbarComponent } from './navbar/navbar.component';
     FavoriteListComponent,
     SearchComponent,
     NavbarComponent,
+    MovieViewComponent,
+    MovieSearchComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
-
   providers: [],
   bootstrap: [AppComponent],
 })
