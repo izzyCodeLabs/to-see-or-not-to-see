@@ -22,7 +22,7 @@ import { SharedComponent } from './shared/shared.component';
     BrowserModule,
     FormsModule
   ],
-  imports: [BrowserModule]
+  
   providers: [],
   bootstrap: [AppComponent]
 })

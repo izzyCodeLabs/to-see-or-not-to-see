@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { subject } from 'rxjs';
+import { Subject } from 'rxjs';
 import { Movie } from '../movie/movie.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class toSeenService {
-  toSeeListChange = new subject<Movie[]>();
+  toSeeListChange = new Subject<Movie[]>();
 
   private myToSeeMovie: Movie[] = [
     {
