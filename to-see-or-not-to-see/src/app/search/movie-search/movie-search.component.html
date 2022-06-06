@@ -12,7 +12,7 @@
 </div>
 <hr>
 <div class="row">
-  <div *ngIf="isLoading">Loading...</div>
+  <div *ngIf="isLoading" style="text-align: center;"><app-loading-spinner></app-loading-spinner></div>
   <div *ngIf="!isLoading">
     <div *ngFor="let movie of movies">
       <a class="list-group-item clearfix movie">
