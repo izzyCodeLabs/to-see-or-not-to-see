@@ -1,0 +1,13 @@
+a.movie {
+  display: flex;
+  align-items: center;
+}
+
+a.movie h4 {
+  margin-left: 0.5em;
+}
+
+a.movie img {
+  height: 200px;
+  width: auto;
+}

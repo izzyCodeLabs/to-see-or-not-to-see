@@ -10,25 +10,26 @@ import { MovieComponent } from './movie/movie.component';
 import { FavoriteListComponent } from './have-seen/favorite-list/favorite-list.component';
 
 import { SearchComponent } from './search/search.component';
+import { MovieViewComponent } from './search/movie-view/movie-view.component';
+import { MovieSearchComponent } from './search/movie-search/movie-search.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-
+    SearchComponent,
+    MovieViewComponent,
+    MovieSearchComponent,
     HaveSeenComponent,
     SeenListComponent,
     MovieComponent,
-    FavoriteListComponent,
-
-    SearchComponent
+    FavoriteListComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
 
   ],
-  imports: [BrowserModule],
   providers: [],
   bootstrap: [AppComponent],
 })
