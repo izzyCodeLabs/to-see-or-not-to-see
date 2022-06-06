@@ -1,11 +1,14 @@
 <div class="row">
   <h3>Search</h3>
-  <form #movieSearch="ngForm" (ngSubmit)="searchMovies(movieSearch)">
+  <form #movieSearch="ngForm" (ngSubmit)="onSearchMovies(movieSearch)">
     <div class="form-group">
       <input type="text" name="movie" id="movie" class="form-control" placeholder="Search for a movie here!" ngModel required>
     </div>
-    <button class="btn btn-primary col-12" [disabled]="!movieSearch.valid">Submit</button>
+    <button type="submit" class="btn btn-success col-12" [disabled]="!movieSearch.valid">Submit</button>
+    <button type="button" class="btn btn-primary col-6" (click)="onNowPlaying()">Now Playing</button>
+    <button type="button" class="btn btn-primary col-6" (click)="onComingSoon()">Coming Soon</button>
   </form>
+
 </div>
 <hr>
 <div class="row">
