@@ -1,0 +1,19 @@
+<div class="row">
+  <h3>Search</h3>
+  <form #movieSearch="ngForm" (ngSubmit)="fetchMovies(movieSearch)">
+    <div class="form-group">
+      <input type="text" name="movie" id="movie" class="form-control" placeholder="Search for a movie here!" ngModel required>
+    </div>
+    <button class="btn btn-primary" [disabled]="!movieSearch.valid">Submit</button>
+  </form>
+</div>
+<div class="row">
+  <div *ngIf="isLoading">Loading...</div>
+  <div *ngIf="!isLoading">
+    <div *ngFor="let movie of movies">
+      <a class="list-group-item clearfix">
+        <div>{{movie.title}}</div>
+      </a>
+    </div>
+  </div>
+</div>
