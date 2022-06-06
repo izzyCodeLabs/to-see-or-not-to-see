@@ -1,0 +1,25 @@
+<div class="row mb-3" *ngFor="let movie of moviesToSee">
+  <div class="col-md-12">
+    <a href="#" class="list-group-item clearfix">
+      <div class="float-left">
+        <h4 class="list-group-item-heading">{{ movie.title }}</h4>
+        <p class="list-group-item-text mb-0">{{ movie.genre }}</p>
+      </div>
+      <div class="float-right">
+        <img
+          src="{{ movie.coverImagePath }}"
+          alt="{{ movie.moviesToSeez }}"
+          class="img-responsive rounded"
+        />
+      </div>
+    </a>
+    <!-- . . .-->
+    <hr />
+
+    <div class="row">
+      <div class="col-md-12">
+        <button class="btn btn-primary">Add New Movie To See</button>
+      </div>
+    </div>
+  </div>
+</div>
