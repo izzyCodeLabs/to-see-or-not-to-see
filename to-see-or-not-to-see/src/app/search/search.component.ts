@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { ImdbApiService } from '../shared/imdb-api.service';
 
 @Component({
   selector: 'app-search',
@@ -8,19 +9,15 @@ import { NgForm } from '@angular/forms';
 })
 export class SearchComponent implements OnInit {
   isLoading = false;
-  movies = [];
+  movies;
 
-  constructor() { }
+  constructor(private imdbService:ImdbApiService) { }
 
   ngOnInit(): void {
   }
 
-  async fetchMovies(form:NgForm) {
-    console.log("Fetching search results for \"" + form.value.movie + "\"...");
-    const res = await fetch('https://imdb-api.com/en/API/SearchMovie/k_69zqgrrv/' + form.value.movie);
-    const data = await res.json();
-    this.movies = data.results;
-    console.log(data);
+  async searchMovies(form:NgForm) {
+    this.movies = await this.imdbService.fetchMovies(form);
   }
 
 }
