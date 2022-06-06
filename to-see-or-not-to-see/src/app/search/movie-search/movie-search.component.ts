@@ -16,10 +16,20 @@ export class MovieSearchComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  async searchMovies(form:NgForm) {
+  async onSearchMovies(form:NgForm) {
     this.isLoading = true;
-    this.movies = await this.imdbService.fetchMovies(form);
+    this.movies = await this.imdbService.fetchSearchedMovies(form);
     this.isLoading = false;
   }
 
+  async onNowPlaying() {
+    this.isLoading = true;
+    this.movies = await this.imdbService.fetchNowPlaying();
+    this.isLoading = false;
+  }
+
+  async onComingSoon() {
+    this.isLoading = true;
+    this.movies = await this.imdbService.fetchComingSoon();
+    this.isLoading = false;
 }
