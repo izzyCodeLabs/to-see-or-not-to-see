@@ -12,6 +12,7 @@ import { FavoriteListComponent } from './have-seen/favorite-list/favorite-list.c
 import { SearchComponent } from './search/search.component';
 import { MovieViewComponent } from './search/movie-view/movie-view.component';
 import { MovieSearchComponent } from './search/movie-search/movie-search.component';
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { MovieSearchComponent } from './search/movie-search/movie-search.compone
     HaveSeenComponent,
     SeenListComponent,
     MovieComponent,
-    FavoriteListComponent
+    FavoriteListComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,
