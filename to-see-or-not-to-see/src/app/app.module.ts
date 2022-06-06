@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 
 import { MovieComponent } from './movie/movie.component';
 import { ToSeeComponent } from './to-see/to-see.component';
+import { SharedComponent } from './shared/shared.component';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { ToSeeComponent } from './to-see/to-see.component';
 
     MovieComponent,
     ToSeeComponent,
+    SharedComponent,
 
   ],
   imports: [

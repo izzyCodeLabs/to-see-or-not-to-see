@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { subject } from 'rxjs';
 import { Movie } from '../movie/movie.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class toSeenService {
-  toSeeListChange = new Subject<Movie[]>();
+  toSeeListChange = new subject<Movie[]>();
 
   private myToSeeMovie: Movie[] = [
     {
@@ -22,26 +22,23 @@ export class toSeenService {
   ];
 
   getToSeeMovies() {
-    return this.myToSeeMovies.slice();
-  }
-
-  getToSeeMovies() {
-    return this.mytoSeeMovies.slice();
+    return this.myToSeeMovie.slice();
   }
 
   addToSeeMovie(idx: number) {
     if (idx < 0) return;
-    let newToSee = this.myTooSeeMovies[idx];
+    let newToSee = this.myToSeeMovie[idx];
 
-    this.toSeeMovies.push(newtoSee);
-    this.toSeeListChange.next(this.myToSee.slice());
+    this.myToSeeMovie.push(newToSee);
+    this.toSeeListChange.next(this.myToSeeMovie.slice());
     console.log(this.myToSeeMovie);
   }
 
   removeToSeeMovie(idx) {
     if (idx < 0) return;
 
-    this.myToSeeMovies.splice(idx, 1);
-    this.toSeeListChange.next(this.myToSeeMovies.slice());
+    this.myToSeeMovie.splice(idx, 1);
+    this.toSeeListChange.next(this.myToSeeMovie.slice());
   }
 }
+
