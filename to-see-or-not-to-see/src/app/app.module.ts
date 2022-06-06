@@ -19,7 +19,7 @@ import { MovieSearchComponent } from './search/movie-search/movie-search.compone
     AppComponent,
     SearchComponent,
     MovieViewComponent,
-    MovieSearchComponent
+    MovieSearchComponent,
     HaveSeenComponent,
     SeenListComponent,
     MovieComponent,
@@ -30,7 +30,6 @@ import { MovieSearchComponent } from './search/movie-search/movie-search.compone
     FormsModule
 
   ],
-  imports: [BrowserModule],
   providers: [],
   bootstrap: [AppComponent],
 })
