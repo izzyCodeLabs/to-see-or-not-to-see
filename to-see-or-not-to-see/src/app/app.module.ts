@@ -10,25 +10,21 @@ import { MovieComponent } from './movie/movie.component';
 import { FavoriteListComponent } from './have-seen/favorite-list/favorite-list.component';
 
 import { SearchComponent } from './search/search.component';
-
+import { AppRoutingModule } from './app-routing.module';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-
     HaveSeenComponent,
     SeenListComponent,
     MovieComponent,
     FavoriteListComponent,
-
-    SearchComponent
+    SearchComponent,
+    NavbarComponent,
   ],
-  imports: [
-    BrowserModule,
-    FormsModule
+  imports: [BrowserModule, FormsModule, AppRoutingModule],
 
-  ],
-  imports: [BrowserModule],
   providers: [],
   bootstrap: [AppComponent],
 })
