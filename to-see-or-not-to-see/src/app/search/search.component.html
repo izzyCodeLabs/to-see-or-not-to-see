@@ -1,23 +1,8 @@
 <div class="row">
-  <h3>Search</h3>
-  <form #movieSearch="ngForm" (ngSubmit)="searchMovies(movieSearch)">
-    <div class="form-group">
-      <input type="text" name="movie" id="movie" class="form-control" placeholder="Search for a movie here!" ngModel required>
-    </div>
-    <button class="btn btn-primary col-12" [disabled]="!movieSearch.valid">Submit</button>
-  </form>
-</div>
-<hr>
-<div class="row">
-  <div *ngIf="isLoading">Loading...</div>
-  <div *ngIf="!isLoading">
-    <div *ngFor="let movie of movies">
-      <a class="list-group-item clearfix movie">
-        <span class="pull-left">
-          <img src="{{movie.image}}" alt="movieImg">
-        </span>
-        <div class="pull-right list-group-item-heading"><h4>{{movie.title}}</h4></div>
-      </a>
-    </div>
+  <div class="pull-right col-md-6">
+    <app-movie-search></app-movie-search>
+  </div>
+  <div class="pull-right col-md-6">
+    <app-movie-view></app-movie-view>
   </div>
 </div>
