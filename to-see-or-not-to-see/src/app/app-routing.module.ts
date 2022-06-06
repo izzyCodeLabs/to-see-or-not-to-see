@@ -7,7 +7,6 @@ const appRoutes: Routes = [
   { path: '', redirectTo: '/have-seen', pathMatch: 'full' },
   { path: 'have-seen', component: HaveSeenComponent },
   { path: 'search', component: SearchComponent },
-  // { path: 'to-see', component: MovieshelfComponent },
 ];
 
 @NgModule({

@@ -4,10 +4,9 @@
     id="brand"
     style="cursor: pointer"
     routerLink="/bookshelf"
-    >BookIt</a
+    >To See or Not to See</a
   >
 
-  <!-- Mobile Collapse Menu -->
   <button
     class="navbar-toggler"
     type="button"
@@ -30,57 +29,19 @@
     <!-- Main Nav Links -->
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item">
-        <a class="nav-link" routerLink="/bookshelf" routerLinkActive="active"
-          >Bookshelf</a
+        <a class="nav-link" routerLink="/have-seen" routerLinkActive="active"
+          >Have Seen</a
         >
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/to-See" routerLinkActive="active"
+        <a class="nav-link" routerLink="/to-see" routerLinkActive="active"
           >To See</a
         >
       </li>
       <li class="nav-item">
-        <a
-          class="nav-link"
-          routerLink="/auth"
-          routerLinkActive="active"
-          (click)="onSignOut()"
-          >Sign Out</a
+        <a class="nav-link" routerLink="/search" routerLinkActive="active"
+          >Add New Movies</a
         >
-      </li>
-      <li class="nav-item" *ngIf="!isAuthenticated">
-        <a class="nav-link" routerLink="/auth" routerLinkActive="active"
-          >Auth</a
-        >
-      </li>
-    </ul>
-
-    <!-- Settings Dropdown Menu -->
-    <ul class="navbar-nav">
-      <li class="nav-item dropdown" appDropdown>
-        <a
-          class="nav-link dropdown-toggle"
-          style="cursor: pointer"
-          id="navbarDropdownMenuLink"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-        >
-          Settings
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a
-            class="dropdown-item"
-            style="cursor: pointer"
-            (click)="onSaveData()"
-            >Save Data</a
-          >
-          <a
-            class="dropdown-item"
-            style="cursor: pointer"
-            (click)="onFetchData()"
-            >Fetch Data</a
-          >
-        </div>
       </li>
     </ul>
   </div>
