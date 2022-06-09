@@ -40,9 +40,10 @@ export class ImdbApiService {
     const formattedMovie = new Movie(
       movie.Title.Title,
       movie.Title.Year,
-      movie.TItle.Stars
+      movie.TItle.Stars,
+      movie.Id,
+      movie.Title.Image
     )
-
     this.seenService.addNewMovie(formattedMovie)
   }
 }
