@@ -1,13 +1,16 @@
 import { Injectable } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { SeenService } from '../have-seen/seen.service';
+import { Movie } from '../movie/movie.model';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ImdbApiService {
-  API_KEY:string = "k_69zqgrrv";
+ private API_KEY:string = "k_69zqgrrv";
 
-  constructor() { }
+  constructor(private seenService: SeenService) { }
 
   async fetchSearchedMovies(form:NgForm) {
     console.log("Fetching search results for \"" + form.value.movie + "\"...");
@@ -34,6 +37,7 @@ export class ImdbApiService {
     return data.items;
   }
 
+
   async fetchMovieData(id:string) {
     console.log("Fetching movie data for id " + id + "...");
     const res = await fetch('https://imdb-api.com/en/API/Title/' + this.API_KEY + "/" + id);
@@ -41,5 +45,16 @@ export class ImdbApiService {
     console.log(data);
     console.log("Done!");
     return data;
+  }
+  
+  saveMovieToHaveSeen(movie) {
+    const formattedMovie = new Movie(
+      movie.Title.Title,
+      movie.Title.Year,
+      movie.TItle.Stars,
+      movie.Id,
+      movie.Title.Image
+    )
+    this.seenService.addNewMovie(formattedMovie)
   }
 }
