@@ -1,0 +1,48 @@
+<nav class="navbar navbar-dark bg-dark navbar-expand-lg mb-4">
+  <a
+    class="navbar-brand brand"
+    id="brand"
+    style="cursor: pointer"
+    routerLink="/bookshelf"
+    >To See or Not to See</a
+  >
+
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarToggler"
+    aria-label="Toggle navigation"
+    aria-controls="navbarToggler"
+    aria-expanded="false"
+    (click)="collapsed = !collapsed"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div
+    class="collapse navbar-collapse"
+    id="navbarToggler"
+    [class.collapse]="collapsed"
+    (window:resize)="collapsed = true"
+  >
+    <!-- Main Nav Links -->
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/have-seen" routerLinkActive="active"
+          >Have Seen</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/upcoming" routerLinkActive="active"
+          >To See</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/search" routerLinkActive="active"
+          >Add New Movies</a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>
