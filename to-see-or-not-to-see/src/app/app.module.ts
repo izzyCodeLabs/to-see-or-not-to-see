@@ -10,28 +10,32 @@ import { MovieComponent } from './movie/movie.component';
 import { FavoriteListComponent } from './have-seen/favorite-list/favorite-list.component';
 
 import { SearchComponent } from './search/search.component';
+import { AppRoutingModule } from './app-routing.module';
+import { NavbarComponent } from './navbar/navbar.component';
 import { MovieViewComponent } from './search/movie-view/movie-view.component';
 import { MovieSearchComponent } from './search/movie-search/movie-search.component';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
-
+import { ToSeeComponent } from './to-see/to-see.component';
+import { SharedComponent } from './shared/shared.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchComponent,
-    MovieViewComponent,
-    MovieSearchComponent,
+
     HaveSeenComponent,
     SeenListComponent,
     MovieComponent,
     FavoriteListComponent,
-    LoadingSpinnerComponent
+    SearchComponent,
+    NavbarComponent,
+    MovieViewComponent,
+    MovieSearchComponent,
+    LoadingSpinnerComponent,
+    MovieComponent,
+    ToSeeComponent,
+    SharedComponent,
   ],
-  imports: [
-    BrowserModule,
-    FormsModule
-
-  ],
+  imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })
