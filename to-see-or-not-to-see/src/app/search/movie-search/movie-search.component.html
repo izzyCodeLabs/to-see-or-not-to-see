@@ -15,7 +15,7 @@
   <div *ngIf="isLoading" style="text-align: center;"><app-loading-spinner></app-loading-spinner></div>
   <div *ngIf="!isLoading">
     <div *ngFor="let movie of movies">
-      <a class="list-group-item clearfix movie">
+      <a class="list-group-item clearfix movie" [routerLink]="[movie.id]" routerLinkActive="active">
         <span class="pull-left">
           <img src="{{movie.image}}" alt="movieImg">
         </span>

@@ -37,6 +37,16 @@ export class ImdbApiService {
     return data.items;
   }
 
+
+  async fetchMovieData(id:string) {
+    console.log("Fetching movie data for id " + id + "...");
+    const res = await fetch('https://imdb-api.com/en/API/Title/' + this.API_KEY + "/" + id);
+    const data = await res.json();
+    console.log(data);
+    console.log("Done!");
+    return data;
+  }
+  
   saveMovieToHaveSeen(movie) {
     const formattedMovie = new Movie(
       movie.Title.Title,
