@@ -7,6 +7,7 @@ import { Movie } from '../movie/movie.model';
 })
 export class SeenService {
   faveListChange = new Subject<Movie[]>();
+  seenMovieChange = new Subject<Movie[]>()
 
   private mySeenMovies: Movie[] = [
     {
@@ -51,5 +52,10 @@ export class SeenService {
 
     this.myFaveMovies.splice(idx, 1);
     this.faveListChange.next(this.myFaveMovies.slice());
+  }
+
+  addNewMovie(movie: Movie){
+    this.mySeenMovies.push(movie);
+    this.seenMovieChange.next(this.mySeenMovies.slice())
   }
 }

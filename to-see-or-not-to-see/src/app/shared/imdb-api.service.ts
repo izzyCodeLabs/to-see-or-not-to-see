@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { SeenService } from '../have-seen/seen.service';
+import { Movie } from '../movie.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ImdbApiService {
-  API_KEY:string = "k_69zqgrrv";
+ private API_KEY:string = "k_69zqgrrv";
 
-  constructor() { }
+  constructor(private seenService: SeenService) { }
 
   async fetchSearchedMovies(form:NgForm) {
     console.log("Fetching search results for \"" + form.value.movie + "\"...");
@@ -34,4 +36,13 @@ export class ImdbApiService {
     return data.items;
   }
 
+  saveMovieToHaveSeen(movie) {
+    const formattedMovie = new Movie(
+      movie.Title.Title,
+      movie.Title.Year,
+      movie.TItle.Stars
+    )
+
+    this.seenService.addNewMovie(formattedMovie)
+  }
 }
