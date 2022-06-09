@@ -32,4 +32,5 @@ export class MovieSearchComponent implements OnInit {
     this.isLoading = true;
     this.movies = await this.imdbService.fetchComingSoon();
     this.isLoading = false;
+  }
 }
