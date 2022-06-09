@@ -34,7 +34,7 @@ export class SeenService {
   }
 
   getFaveMovies() {
-    return this.mySeenMovies.slice();
+    return this.myFaveMovies.slice();
   }
 
   addFaveMovie(idx: number) {
