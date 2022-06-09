@@ -14,10 +14,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MovieViewComponent } from './search/movie-view/movie-view.component';
 import { MovieSearchComponent } from './search/movie-search/movie-search.component';
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
+import { ToSeeComponent } from './to-see/to-see.component';
+import { SharedComponent } from './shared/shared.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+
     HaveSeenComponent,
     SeenListComponent,
     MovieComponent,
@@ -26,6 +30,10 @@ import { MovieSearchComponent } from './search/movie-search/movie-search.compone
     NavbarComponent,
     MovieViewComponent,
     MovieSearchComponent,
+    LoadingSpinnerComponent,
+    MovieComponent,
+    ToSeeComponent,
+    SharedComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [],

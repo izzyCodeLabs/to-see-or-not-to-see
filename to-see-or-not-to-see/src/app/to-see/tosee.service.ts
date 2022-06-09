@@ -17,8 +17,9 @@ export class toSeenService {
     {
       title: 'DrugStore Cowboy',
       releasedYear: 1989,
-      stars: ['Matt Dillion, Kelly Lynch'],
-    },
+      stars: ['Matt Dillion, Kelly Lynch']
+    }
+
   ];
 
   getToSeeMovies() {
@@ -41,3 +42,4 @@ export class toSeenService {
     this.toSeeListChange.next(this.myToSeeMovie.slice());
   }
 }
+
