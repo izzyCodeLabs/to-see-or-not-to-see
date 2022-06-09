@@ -17,6 +17,7 @@ import { MovieSearchComponent } from './search/movie-search/movie-search.compone
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 import { ToSeeComponent } from './to-see/to-see.component';
 import { SharedComponent } from './shared/shared.component';
+import { NoMovieComponent } from './search/no-movie/no-movie.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { SharedComponent } from './shared/shared.component';
     MovieComponent,
     ToSeeComponent,
     SharedComponent,
+    NoMovieComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [],

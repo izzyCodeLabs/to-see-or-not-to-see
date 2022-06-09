@@ -9,7 +9,7 @@ export class toSeenService {
   toSeeListChange = new Subject<Movie[]>();
 
   private myToSeeMovie: Movie[] = [
-    {
+    /*{
       title: 'Matrix',
       releasedYear: 1999,
       stars: ['Keanu Reeves', 'Laurence Fishburne'],
@@ -18,7 +18,7 @@ export class toSeenService {
       title: 'DrugStore Cowboy',
       releasedYear: 1989,
       stars: ['Matt Dillion, Kelly Lynch']
-    }
+    }*/
   ];
 
   getToSeeMovies() {
