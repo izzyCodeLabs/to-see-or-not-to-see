@@ -22,7 +22,7 @@ export class SeenService {
       releasedYear: 2010,
       stars: ['Leonardo DiCaprio', 'Joseph Gordon-Levitt', 'Elliot Page'],
       imdbId: '5',
-      poster:''
+      poster:'https://imdb-api.com/images/original/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_Ratio0.7273_AL_.jpg'
     },
   ];
 

@@ -1,0 +1,9 @@
+.display {
+  display: flex;
+  align-items: center;
+}
+
+img {
+  height: 200px;
+  width: auto;
+}

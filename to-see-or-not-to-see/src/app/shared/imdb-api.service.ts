@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { SeenService } from '../have-seen/seen.service';
-import { Movie } from '../movie.model';
+import { Movie } from '../movie/movie.model';
+
 
 @Injectable({
   providedIn: 'root'
