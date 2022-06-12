@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { MovieComponent } from './movie/movie.component';
 import { ToSeeComponent } from './to-see/to-see.component';
 import { SharedComponent } from './shared/shared.component';
+import { HaventSeenComponent } from './havent-seen/havent-seen.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { SharedComponent } from './shared/shared.component';
     MovieComponent,
     ToSeeComponent,
     SharedComponent,
+    HaventSeenComponent,
 
   ],
   imports: [
