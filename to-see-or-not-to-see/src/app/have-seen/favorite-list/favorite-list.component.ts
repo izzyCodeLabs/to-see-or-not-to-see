@@ -19,11 +19,9 @@ export class FavoriteListComponent implements OnInit {
     this.favoriteMovies = this.seenService.getFaveMovies();
 
     // listen for change to favorite list
-    this.faveListSub = this.seenService.faveListChange.subscribe(
-      (updatedList) => {
-        this.favoriteMovies = updatedList;
-      }
-    );
+    this.seenService.faveListChange.subscribe((updatedList) => {
+      this.favoriteMovies = updatedList;
+    });
   }
 
   onRemoveFavorite(idx) {

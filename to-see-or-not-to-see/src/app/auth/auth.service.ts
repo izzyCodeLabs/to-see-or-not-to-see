@@ -5,6 +5,8 @@ import { tap, BehaviorSubject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
 
+const SIGN_UP_URL = '';
+
 export interface AuthResData {
   kind: string;
   idToken: string;

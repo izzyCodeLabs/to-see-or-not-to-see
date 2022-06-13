@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { AuthResData } from './auth.service';
 
 @Component({
   selector: 'app-auth',
