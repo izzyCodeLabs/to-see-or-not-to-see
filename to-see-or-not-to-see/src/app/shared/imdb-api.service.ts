@@ -59,6 +59,5 @@ export class ImdbApiService {
 
   saveMovieToHaveSeen(movie) {
     this.seenService.addNewMovie(movie);
-    this.seenService.getSeenMovies();
   }
 }

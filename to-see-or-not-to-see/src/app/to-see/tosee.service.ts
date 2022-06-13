@@ -13,14 +13,14 @@ export class toSeenService {
     {
       title: 'Matrix',
       releasedYear: 1999,
-      stars: ['Keanu Reeves', 'Laurence Fishburne'],
+      stars: 'Keanu Reeves, Laurence Fishburne',
       imdbId: '6',
       poster: ''
     },
     {
       title: 'DrugStore Cowboy',
       releasedYear: 1989,
-      stars: ['Matt Dillion, Kelly Lynch'],
+      stars: 'Matt Dillion, Kelly Lynch',
       imdbId: '7',
       poster: ''
     }
