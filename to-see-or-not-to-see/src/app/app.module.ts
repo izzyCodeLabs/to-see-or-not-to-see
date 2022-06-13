@@ -20,6 +20,7 @@ import { SharedComponent } from './shared/shared.component';
 import { NoMovieComponent } from './search/no-movie/no-movie.component';
 import { MovieComponent } from './shared/movie/movie.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
     ToSeeComponent,
     SharedComponent,
     NoMovieComponent,
+    AuthComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [],
