@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { tap } from 'rxjs';
 import { SeenService } from 'src/app/have-seen/seen.service';
+import { Movie } from '../movie/movie.model';
 
 @Injectable({
   providedIn: 'root',
@@ -8,12 +10,8 @@ import { SeenService } from 'src/app/have-seen/seen.service';
 export class HTTPService {
   firebaseSeenURL =
     'https://movie-search-and-list-default-rtdb.firebaseio.com/seen.json';
-  firebaseToSeeURL =
-    'https://movie-search-and-list-default-rtdb.firebaseio.com/to-see.json';
   firebaseFaveURL =
     'https://movie-search-and-list-default-rtdb.firebaseio.com/fave.json';
-  firebaseSkipURL =
-    'https://movie-search-and-list-default-rtdb.firebaseio.com/skip.json';
 
   constructor(private http: HttpClient, private seenService: SeenService) {}
 
@@ -29,5 +27,13 @@ export class HTTPService {
     this.http.put(this.firebaseFaveURL, fave).subscribe((res) => {
       console.log('Firebase DB Response:', res);
     });
+  }
+
+  fetchSeenFromFirebase() {
+    return this.http.get(this.firebaseSeenURL, {}).pipe(
+      tap((seen: Movie[]) => {
+        this.seenService.setSeenMovies(seen);
+      })
+    );
   }
 }

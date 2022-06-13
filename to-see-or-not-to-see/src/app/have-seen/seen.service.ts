@@ -72,4 +72,9 @@ export class SeenService {
     this.mySeenMovies.push(movie);
     this.seenMovieChange.next(this.mySeenMovies.slice());
   }
+
+  setSeenMovies(movieArr: Movie[]) {
+    this.mySeenMovies = movieArr;
+    this.seenMovieChange.next(this.mySeenMovies.slice());
+  }
 }
