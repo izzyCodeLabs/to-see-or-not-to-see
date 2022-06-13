@@ -1,16 +1,14 @@
 <a style="cursor: pointer" class="list-group-item">
   <div class="row justify-content-between">
     <div class="float-left display col-md-7">
-    <h4 class="list-grou-item-heading">{{ movie.title }}</h4>
-    <p class="list-group-item-text">{{ movie.releasedYear }}</p>
-    <br>
-    <h6>Starring:</h6>
-    <h6 *ngFor="let star of movie.stars" >{{star}}</h6>
+      <h4 class="list-grou-item-heading">{{ movie.title }}</h4>
+      <p class="list-group-item-text">{{ movie.releasedYear }}</p>
+      <br />
+      <h6>Starring:</h6>
+      <h6 *ngFor="let star of movie.stars">{{ star }}</h6>
     </div>
     <div class="col-md-5">
-      <span class="">
-        <img src="{{movie.poster}}">
-      </span>
+      <img src="{{ movie.poster }}" />
     </div>
   </div>
 </a>
