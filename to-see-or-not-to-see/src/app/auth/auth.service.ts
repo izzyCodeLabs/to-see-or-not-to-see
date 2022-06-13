@@ -6,10 +6,10 @@ import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
 
 const SIGN_UP_URL =
-  'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyA2nDqJOGyCVp4VLNDI5VIpzV1Dnwf8l5Y';
+  'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=';
 
 const SIGN_IN_URL =
-  'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyA2nDqJOGyCVp4VLNDI5VIpzV1Dnwf8l5Y';
+  'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=';
 
 export interface AuthResData {
   kind: string;
