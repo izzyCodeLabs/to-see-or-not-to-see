@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import { Movie } from '../movie/movie.model';
+import { Movie } from '../shared/movie/movie.model';
+
 
 @Injectable({
   providedIn: 'root',
@@ -23,6 +24,7 @@ export class toSeenService {
       imdbId: '7',
       poster: ''
     }
+
   ];
 
   getToSeeMovies() {

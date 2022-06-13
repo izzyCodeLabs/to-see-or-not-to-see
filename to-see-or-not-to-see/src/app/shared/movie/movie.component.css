@@ -1,0 +1,9 @@
+img {
+  height: 200px;
+  width: auto;
+}
+
+.movie {
+  display: flex;
+  align-items: center;
+}
