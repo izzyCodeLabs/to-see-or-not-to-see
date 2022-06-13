@@ -23,6 +23,7 @@ export class toSeenService {
       imdbId: '7',
       poster: ''
     }
+
   ];
 
   getToSeeMovies() {
