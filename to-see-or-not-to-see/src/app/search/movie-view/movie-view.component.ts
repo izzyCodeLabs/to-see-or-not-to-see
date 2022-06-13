@@ -9,12 +9,7 @@ import { ImdbApiService } from 'src/app/shared/imdb-api.service';
   styleUrls: ['./movie-view.component.css'],
 })
 export class MovieViewComponent implements OnInit {
-  movie = {
-    fullTitle: 'dummy name (year)',
-    image:
-      'https://imdb-api.com/images/original/MV5BMjM2MDgxMDg0Nl5BMl5BanBnXkFtZTgwNTM2OTM5NDE@._V1_Ratio0.6751_AL_.jpg',
-    plot: 'Lorem ipsum and whatnot',
-  };
+  movie:Movie;
   isLoading: boolean = false;
 
   constructor(
@@ -32,5 +27,9 @@ export class MovieViewComponent implements OnInit {
     this.isLoading = true;
     this.movie = await this.imdbService.fetchMovieData(id);
     this.isLoading = false;
+  }
+
+  onSeenMovie() {
+    this.imdbService.saveMovieToHaveSeen(this.movie);
   }
 }
