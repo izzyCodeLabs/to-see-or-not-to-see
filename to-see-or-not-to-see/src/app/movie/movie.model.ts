@@ -5,5 +5,6 @@ export class Movie {
     public stars: string[],
     public imdbId: string,
     public poster: string,
+    public plot?: string
   ) {}
 }
