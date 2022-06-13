@@ -1,6 +1,11 @@
-<div>
-  <h1>{{movie.fullTitle}}</h1>
-  <img src="{{movie.image}}" alt="movie poster">
-  <p>{{movie.plot}}</p>
+<div *ngIf="isLoading" style="text-align: center;">
+  <app-loading-spinner></app-loading-spinner>
 </div>
-<button class="btn btn-primary">Add to To See</button>
+<div *ngIf="!isLoading">
+  <h1>{{movie.title}} ({{movie.releasedYear}})</h1>
+  <img src="{{movie.poster}}" alt="movie poster">
+  <p>{{movie.plot}}</p>
+  <button type="button" class="btn btn-primary">I want to see this!</button>
+  <button type="button" class="btn btn-secondary" (click)="onSeenMovie()">I've seen this!</button>
+</div>
+

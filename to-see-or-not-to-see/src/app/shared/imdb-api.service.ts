@@ -52,18 +52,12 @@ export class ImdbApiService {
     );
     const data = await res.json();
     console.log(data);
+    let movie = new Movie(data.title, data.year, data.stars, data.id, data.image, data.plot);
     console.log('Done!');
-    return data;
+    return movie;
   }
 
   saveMovieToHaveSeen(movie) {
-    const formattedMovie = new Movie(
-      movie.Title.Title,
-      movie.Title.Year,
-      movie.TItle.Stars,
-      movie.Id,
-      movie.Title.Image
-    );
-    this.seenService.addNewMovie(formattedMovie);
+    this.seenService.addNewMovie(movie);
   }
 }
