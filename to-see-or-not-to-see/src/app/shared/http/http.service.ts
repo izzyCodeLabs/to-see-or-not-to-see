@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { tap } from 'rxjs';
+import { AuthService } from 'src/app/auth/auth.service';
 import { SeenService } from 'src/app/have-seen/seen.service';
 import { Movie } from '../movie/movie.model';
 
@@ -13,7 +14,11 @@ export class HTTPService {
   firebaseFaveURL =
     'https://movie-search-and-list-default-rtdb.firebaseio.com/fave.json';
 
-  constructor(private http: HttpClient, private seenService: SeenService) {}
+  constructor(
+    private http: HttpClient,
+    private seenService: SeenService,
+    private authService: AuthService
+  ) {}
 
   saveMoviesToFirebase() {
     const seen = this.seenService.getSeenMovies();
@@ -29,7 +34,15 @@ export class HTTPService {
     });
   }
 
-  fetchMoviesFromFirebase() {
+  fetchSeenMoviesFromFirebase() {
+    return this.http.get(this.firebaseSeenURL, {}).pipe(
+      tap((seen: Movie[]) => {
+        this.seenService.setSeenMovies(seen);
+      })
+    );
+  }
+
+  fetchUpcomingMoviesFromFirebase() {
     return this.http.get(this.firebaseSeenURL, {}).pipe(
       tap((seen: Movie[]) => {
         this.seenService.setSeenMovies(seen);

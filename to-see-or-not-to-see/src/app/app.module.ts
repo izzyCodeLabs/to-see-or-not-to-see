@@ -21,7 +21,8 @@ import { NoMovieComponent } from './search/no-movie/no-movie.component';
 import { MovieComponent } from './shared/movie/movie.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { AuthComponent } from './auth/auth.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptorService } from './auth/auth-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,13 @@ import { HttpClientModule } from '@angular/common/http';
     AuthComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

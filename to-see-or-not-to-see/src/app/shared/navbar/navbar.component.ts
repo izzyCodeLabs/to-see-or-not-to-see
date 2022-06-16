@@ -30,8 +30,12 @@ export class NavbarComponent implements OnInit {
     this.httpService.saveMoviesToFirebase();
   }
 
-  onFetchData() {
-    this.httpService.fetchMoviesFromFirebase().subscribe();
+  onFetchSeen() {
+    this.httpService.fetchSeenMoviesFromFirebase().subscribe();
+  }
+
+  onFetchUpcoming() {
+    this.httpService.fetchUpcomingMoviesFromFirebase().subscribe
   }
 
   onSignOut() {
