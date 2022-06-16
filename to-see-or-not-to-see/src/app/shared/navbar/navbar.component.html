@@ -28,19 +28,33 @@
   >
     <!-- Main Nav Links -->
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="isAuthenticated">
         <a class="nav-link" routerLink="/have-seen" routerLinkActive="active"
           >Have Seen</a
         >
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="isAuthenticated">
         <a class="nav-link" routerLink="/upcoming" routerLinkActive="active"
           >Upcoming</a
         >
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="isAuthenticated">
         <a class="nav-link" routerLink="/search" routerLinkActive="active"
           >Add New Movies</a
+        >
+      </li>
+      <li class="nav-item" *ngIf="!isAuthenticated">
+        <a class="nav-link" routerLink="/login" routerLinkActive="active"
+          >Login</a
+        >
+      </li>
+      <li class="nav-item" *ngIf="isAuthenticated">
+        <a
+          class="nav-link"
+          routerLink="/login"
+          routerLinkActive="active"
+          (click)="onSignOut()"
+          >Sign Out</a
         >
       </li>
     </ul>

@@ -29,7 +29,7 @@ export class HTTPService {
     });
   }
 
-  fetchSeenFromFirebase() {
+  fetchMoviesFromFirebase() {
     return this.http.get(this.firebaseSeenURL, {}).pipe(
       tap((seen: Movie[]) => {
         this.seenService.setSeenMovies(seen);

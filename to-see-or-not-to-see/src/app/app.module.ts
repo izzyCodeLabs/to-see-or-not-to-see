@@ -21,6 +21,7 @@ import { NoMovieComponent } from './search/no-movie/no-movie.component';
 import { MovieComponent } from './shared/movie/movie.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { AuthComponent } from './auth/auth.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,7 @@ import { AuthComponent } from './auth/auth.component';
     NoMovieComponent,
     AuthComponent,
   ],
-  imports: [BrowserModule, FormsModule, AppRoutingModule],
+  imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
