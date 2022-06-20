@@ -17,8 +17,13 @@ import { MovieSearchComponent } from './search/movie-search/movie-search.compone
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 import { ToSeeComponent } from './to-see/to-see.component';
 import { SharedComponent } from './shared/shared.component';
+
+import { NoMovieComponent } from './search/no-movie/no-movie.component';
 import { MovieComponent } from './shared/movie/movie.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
+import { AuthComponent } from './auth/auth.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptorService } from './auth/auth-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -35,9 +40,17 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
     MovieComponent,
     ToSeeComponent,
     SharedComponent,
+    NoMovieComponent,
+    AuthComponent,
   ],
-  imports: [BrowserModule, FormsModule, AppRoutingModule],
-  providers: [],
+  imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

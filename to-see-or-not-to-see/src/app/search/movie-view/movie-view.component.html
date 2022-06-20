@@ -1,1 +1,12 @@
-<p>movie-view works!</p>
+<div *ngIf="isLoading" style="text-align: center;">
+  <app-loading-spinner></app-loading-spinner>
+</div>
+<div *ngIf="!isLoading">
+  <h1>{{movie.title}} ({{movie.releasedYear}})</h1>
+  <img src="{{movie.poster}}" alt="movie poster">
+  <p>{{movie.plot}}</p>
+  <button type="button" class="btn btn-primary">I want to see this!</button>
+  <button type="button" class="btn btn-success" (click)="onSeenMovie()">I've seen this!</button>
+  <a href="https://www.imdb.com/title/{{movie.imdbId}}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" >I wanna know more!</a>
+</div>
+

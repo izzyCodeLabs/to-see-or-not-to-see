@@ -1,6 +1,19 @@
-<a style="cursor: pointer" class="list-group-item">
-  <div class="float-left">
-    <h4 class="list-grou-item-heading">{{ movie.title }}</h4>
-    <p class="list-group-item- text">{{ movie.releasedYear }}</p>
+<div style="cursor: pointer" class="col-md-12">
+  <div class="row justify-content-between">
+    <a class="list-group-item clearfix movie" [routerLink]="['/search/' + movie.imdbId]">
+      <span class="pull-left">
+        <img src="{{ movie.poster }}" alt="movieImg" />
+      </span>
+      <br />
+      <div class="pull-right list-group-item-heading">
+        <h4>{{ movie.title }}</h4>
+        <h5>Released in:</h5>
+        <p style="margin: 0.4em">{{ movie.releasedYear }}</p>
+        <h6>Starring:</h6>
+        <p style="margin: 0 0.7em">
+          {{ movie.stars }}
+        </p>
+      </div>
+    </a>
   </div>
-</a>
+</div>
