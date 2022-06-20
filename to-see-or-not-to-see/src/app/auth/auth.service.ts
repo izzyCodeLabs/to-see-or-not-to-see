@@ -75,6 +75,36 @@ export class AuthService {
     if (this.tokenExpTimer) clearTimeout(this.tokenExpTimer);
   }
 
+  autoSignIn() {
+    // Check Local Storage for User
+    const userData: UserData = JSON.parse(
+      localStorage.getItem('movie_user_data')
+    );
+
+    if (!userData) return;
+
+    const { email, id, _token, _tokenExpirationDate } = userData;
+
+    // Create a Loaded User
+    const loadedUser = new User(
+      email,
+      id,
+      _token,
+      new Date(_tokenExpirationDate)
+    );
+
+    if (loadedUser.token) {
+      this.currUser.next(loadedUser);
+
+      // Setup Timer for Auto Logout
+      const expDuration =
+        new Date(_tokenExpirationDate).getTime() - new Date().getTime();
+      this.autoSignOut(expDuration);
+
+      this.router.navigate(['have-seen']);
+    }
+  }
+
   handleAuth(email: string, userId: string, token: string, expiresIn: number) {
     // Create expiration date
     const expDate = new Date(new Date().getTime() + expiresIn * 1000);
@@ -85,5 +115,11 @@ export class AuthService {
 
     // Save new User to Local Storage
     localStorage.setItem('movie_user_data', JSON.stringify(newUser));
+  }
+
+  autoSignOut(expDuration: number) {
+    this.tokenExpTimer = setTimeout(() => {
+      this.signOut();
+    }, expDuration);
   }
 }

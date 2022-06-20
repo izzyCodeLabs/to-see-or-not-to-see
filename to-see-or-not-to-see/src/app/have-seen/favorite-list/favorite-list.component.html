@@ -1,5 +1,5 @@
 <div class="row mb-3" *ngFor="let movie of favoriteMovies; let i = idx">
-  <div class="col-md-12">
+  <div class="col-md-12" *ngIf="movie.listId == 'favorite'">
     <app-movie [movie]="movie" [movieIdx]="i"></app-movie>
     <button
       class="float-right"

@@ -15,7 +15,7 @@ export class FavoriteListComponent implements OnInit {
   constructor(private seenService: SeenService) {}
 
   ngOnInit(): void {
-    this.favoriteMovies = this.seenService.getFaveMovies();
+    this.favoriteMovies = this.seenService.getSeenMovies();
 
     // listen for change to favorite list
     this.seenService.faveListChange.subscribe((updatedList) => {

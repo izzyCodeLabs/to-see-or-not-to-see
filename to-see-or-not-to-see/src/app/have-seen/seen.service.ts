@@ -17,6 +17,7 @@ export class SeenService {
       imdbId: 'tt0449010',
       poster:
         'https://imdb-api.com/images/original/MV5BNzMyMGI1N2UtNzc5YS00OGNkLTg1OTktMTNkMmY2Zjk1NTQxXkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_Ratio0.6751_AL_.jpg',
+      listId: 'favorite',
     },
     {
       title: 'Inception',
