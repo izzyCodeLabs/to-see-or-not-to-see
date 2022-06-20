@@ -14,6 +14,10 @@ export class SeenListComponent implements OnInit {
 
   ngOnInit(): void {
     this.seenMovies = this.seenService.getSeenMovies();
+
+    this.seenService.seenMovieChange.subscribe((updatedList) => {
+      this.seenMovies = updatedList;
+    });
   }
 
   onAddFavorite(idx: number) {

@@ -28,16 +28,7 @@ export class SeenService {
     },
   ];
 
-  private myFaveMovies: Movie[] = [
-    {
-      title: 'Eragon',
-      releasedYear: 2006,
-      stars: 'Ed Speleers, Sienna Guillory, Jeremy Irons',
-      imdbId: 'tt0449010',
-      poster:
-        'https://imdb-api.com/images/original/MV5BNzMyMGI1N2UtNzc5YS00OGNkLTg1OTktMTNkMmY2Zjk1NTQxXkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_Ratio0.6751_AL_.jpg',
-    },
-  ];
+  private myFaveMovies: Movie[] = [];
 
   getSeenMovies() {
     return this.mySeenMovies.slice();
@@ -53,19 +44,29 @@ export class SeenService {
     if (this.myFaveMovies.includes(this.mySeenMovies[idx])) {
       return;
     } else {
-      let newFavorite = this.mySeenMovies[idx];
+      let newFavorite:Movie = this.mySeenMovies[idx];
 
       this.myFaveMovies.push(newFavorite);
+      this.mySeenMovies.splice(idx, 1);
+      this.seenMovieChange.next(this.mySeenMovies.slice());
       this.faveListChange.next(this.myFaveMovies.slice());
       console.log(this.myFaveMovies);
     }
   }
 
-  removeFavoriteMovie(idx) {
+  removeFavoriteMovie(idx:number) {
     if (idx < 0) return;
 
-    this.myFaveMovies.splice(idx, 1);
-    this.faveListChange.next(this.myFaveMovies.slice());
+    if (this.mySeenMovies.includes(this.myFaveMovies[idx])) {
+      return;
+    } else {
+      let newSeen:Movie = this.myFaveMovies[idx];
+
+      this.mySeenMovies.push(newSeen);
+      this.myFaveMovies.splice(idx, 1);
+      this.seenMovieChange.next(this.mySeenMovies.slice());
+      this.faveListChange.next(this.myFaveMovies.slice());
+    }
   }
 
   addNewMovie(movie: Movie) {
