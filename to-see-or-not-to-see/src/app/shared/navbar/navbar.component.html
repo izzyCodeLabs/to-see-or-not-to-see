@@ -58,7 +58,7 @@
         >
       </li>
       <li class="nav-item" *ngIf="isAuthenticated">
-        <button (click)="onSaveData()">Save Movies</button>
+        <a class="nav-link" (click)="onSaveData()" style="cursor: pointer;">Save Movies</a>
       </li>
     </ul>
   </div>
