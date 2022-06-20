@@ -24,7 +24,7 @@ export class FavoriteListComponent implements OnInit {
     });
   }
 
-  onRemoveFavorite(idx) {
+  onRemoveFavorite(idx:number) {
     this.seenService.removeFavoriteMovie(idx);
   }
 }
