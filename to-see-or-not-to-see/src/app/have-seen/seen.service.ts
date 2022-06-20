@@ -39,12 +39,18 @@ export class SeenService {
     },
   ];
 
+  private myToSeeMovies: Movie[] = [];
+
   getSeenMovies() {
     return this.mySeenMovies.slice();
   }
 
   getFaveMovies() {
     return this.myFaveMovies.slice();
+  }
+
+  getToSeeMovies() {
+    return this.myToSeeMovies.slice();
   }
 
   addFaveMovie(idx: number) {
